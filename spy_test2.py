@@ -9,4 +9,9 @@ html_news = res.text
 
 soup = BeautifulSoup(res.text,"html.parser")
 title = soup.select("#artibodyTitle")
+time_test = soup.select("#navtimeSource")[0]
+#souce_test = soup.select("#navtimeSource a")
 print(title[0].text)
+print(time_test.contents[0].strip())
+print(time_test.contents[1].text)
+
