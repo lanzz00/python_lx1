@@ -1,10 +1,11 @@
 #coding = utf-8
 
 from selenium import webdriver
-
-driver = webdriver.Chrome()
+options = webdriver.ChromeOptions()
+options.add_experimental_option("excludeSwitches",["ignore-certificate-errors"])
+driver = webdriver.Chrome(chrome_options=options)
 driver.get("https://www.baidu.com/")
 
-print("设置浏览器的宽X高")
-driver.set_Window_size(400,800)
-driver.quit
+driver.find_element_by_id("kw").send_keys("shao nv shi dai")
+driver.find_element_by_id("su").click()
+driver.quit()
