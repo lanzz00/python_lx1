@@ -6,7 +6,19 @@ options.add_experimental_option("excludeSwitches",["ignore-certificate-errors"])
 driver = webdriver.Chrome(chrome_options=options)
 
 driver.get("https://www.baidu.com/")
+size = driver.find_element_by_id("kw").size
+print(size)
 
+text = driver.find_element_by_id("cp").text
+print(text)
+
+attr = driver.find_element_by_id("kw").get_attribute("type")
+print(attr)
+
+dis_play1 = driver.find_element_by_id("kw").is_displayed()
+print(dis_play1)
+
+'''
 #获取输入框的尺寸
 size = driver.find_element_by_id("kw").size
 print(size)
@@ -22,3 +34,5 @@ print(atrr)
 #返回元素的结果是否可见，返回结果TRUE或FALSE
 result = driver.find_element_by_id("kw").is_displayed()
 print(result)
+
+'''
